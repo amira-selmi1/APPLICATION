@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   FTTH — Design System inspiré Mantu / Amaris
+   Palette consulting : noir profond, bleu électrique, blanc pur
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    /* Fond principal — blanc cassé très léger */
+    --background: 220 20% 97%;
+    --foreground: 222 40% 8%;
+
+    /* Cartes — blanc pur */
+    --card: 0 0% 100%;
+    --card-foreground: 222 40% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 40% 8%;
+
+    /* Violet Mantu */
+    --primary: 263 80% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 263 80% 68%;
+
+    --secondary: 263 16% 93%;
+    --secondary-foreground: 263 40% 15%;
+
+    --muted: 263 10% 92%;
+    --muted-foreground: 263 10% 48%;
+
+    /* Accent violet clair */
+    --accent: 280 90% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 78% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Statuts */
+    --status-affecte: 263 80% 55%;
+    --status-encours: 35 95% 52%;
+    --status-realise: 152 68% 38%;
+    --status-bloque: 0 78% 52%;
+
+    --success: 152 68% 38%;
+    --warning: 35 95% 52%;
+    --info: 263 80% 58%;
+
+    --border: 263 10% 88%;
+    --input: 263 10% 90%;
+    --ring: 263 80% 52%;
+
+    --radius: 0.5rem;
+
+    /* Gradients violet Mantu */
+    --gradient-primary: linear-gradient(135deg, hsl(263 80% 45%), hsl(280 90% 58%));
+    --gradient-hero: linear-gradient(135deg, hsl(265 47% 5%), hsl(263 80% 18%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(263 10% 98%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px 0 hsl(263 80% 10% / 0.06);
+    --shadow-md: 0 4px 16px -2px hsl(263 80% 10% / 0.10);
+    --shadow-lg: 0 12px 32px -8px hsl(263 80% 30% / 0.18);
+    --shadow-glow: 0 0 28px hsl(263 80% 60% / 0.35);
+
+    /* Sidebar — noir profond Mantu */
+    --sidebar-background: 265 47% 5%;
+    --sidebar-foreground: 263 20% 85%;
+    --sidebar-primary: 263 80% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 265 47% 11%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 265 47% 12%;
+    --sidebar-ring: 263 80% 65%;
+  }
+
+  .dark {
+    --background: 225 47% 6%;
+    --foreground: 210 30% 95%;
+
+    --card: 225 47% 9%;
+    --card-foreground: 210 30% 95%;
+
+    --popover: 225 47% 9%;
+    --popover-foreground: 210 30% 95%;
+
+    --primary: 263 80% 65%;
+    --primary-foreground: 265 47% 5%;
+    --primary-glow: 263 80% 75%;
+
+    --secondary: 265 47% 13%;
+    --secondary-foreground: 263 20% 95%;
+
+    --muted: 265 47% 13%;
+    --muted-foreground: 263 16% 58%;
+
+    --accent: 280 90% 68%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 265 47% 16%;
+    --input: 265 47% 14%;
+    --ring: 263 80% 65%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(263 80% 48%), hsl(280 90% 62%));
+    --gradient-hero: linear-gradient(135deg, hsl(265 47% 4%), hsl(263 80% 16%));
+    --gradient-card: linear-gradient(180deg, hsl(265 47% 10%), hsl(265 47% 8%));
+
+    --shadow-md: 0 4px 16px -2px hsl(0 0% 0% / 0.45);
+    --shadow-lg: 0 12px 32px -8px hsl(0 0% 0% / 0.60);
+
+    --sidebar-background: 265 55% 3%;
+    --sidebar-foreground: 263 20% 82%;
+    --sidebar-primary: 263 80% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 265 47% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 265 47% 12%;
+    --sidebar-ring: 263 80% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+  h1, h2, h3, h4 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .gradient-primary { background: var(--gradient-primary); }
+  .gradient-hero    { background: var(--gradient-hero); }
+  .gradient-card    { background: var(--gradient-card); }
+  .shadow-elegant   { box-shadow: var(--shadow-lg); }
+  .shadow-soft      { box-shadow: var(--shadow-md); }
+  .shadow-glow      { box-shadow: var(--shadow-glow); }
+
+  /* Ligne décorative Mantu sous les titres de section */
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 3px;
+    margin-top: 0.4rem;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+  }
+}

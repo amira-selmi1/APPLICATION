@@ -1,0 +1,74 @@
+/* Handsontable theme override aligned with design system */
+.hot-wrapper {
+  --ht-bg: hsl(var(--background));
+  --ht-fg: hsl(var(--foreground));
+  --ht-border: hsl(var(--border));
+  --ht-header: hsl(var(--secondary));
+  --ht-header-fg: hsl(var(--secondary-foreground));
+  --ht-selected: hsl(var(--primary) / 0.15);
+  --ht-selected-border: hsl(var(--primary));
+}
+
+.hot-wrapper .handsontable {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--ht-fg);
+}
+
+.hot-wrapper .handsontable th {
+  background: var(--ht-header) !important;
+  color: var(--ht-header-fg) !important;
+  font-weight: 600 !important;
+  border-color: var(--ht-border) !important;
+  letter-spacing: 0.01em;
+}
+
+.hot-wrapper .handsontable td {
+  background: var(--ht-bg);
+  color: var(--ht-fg);
+  border-color: var(--ht-border) !important;
+}
+
+.hot-wrapper .handsontable tr:hover td {
+  background: hsl(var(--muted) / 0.4);
+}
+
+.hot-wrapper .handsontable .area {
+  background: var(--ht-selected) !important;
+}
+
+.hot-wrapper .handsontable .current {
+  background: hsl(var(--primary) / 0.08) !important;
+}
+
+.hot-wrapper .handsontable .wtBorder.current {
+  background: var(--ht-selected-border) !important;
+}
+
+.hot-wrapper .htCore td.htInvalid {
+  background: hsl(var(--destructive) / 0.12) !important;
+}
+
+/* Row header selected mark */
+.hot-wrapper .hot-row-header {
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Context menu */
+.htContextMenu, .htDropdownMenu {
+  background: hsl(var(--popover)) !important;
+  color: hsl(var(--popover-foreground)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 8px !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+.htContextMenu td, .htDropdownMenu td {
+  background: transparent !important;
+  color: hsl(var(--popover-foreground)) !important;
+}
+.htContextMenu td.current,
+.htContextMenu td:hover,
+.htDropdownMenu td:hover {
+  background: hsl(var(--accent) / 0.15) !important;
+}
