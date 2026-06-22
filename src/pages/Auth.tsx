@@ -110,7 +110,7 @@ const Auth = () => {
 
       {/* Panneau droit — formulaire */}
       <div className="flex flex-1 flex-col items-center justify-center p-8 bg-background">
-        <div className="w-full max-w-sm space-y-8">
+        <div className="w-full max-w-xl space-y-8">
           {/* Logo mobile */}
           <div className="flex lg:hidden items-center gap-2 justify-center mb-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-primary shadow-glow">
@@ -120,13 +120,13 @@ const Auth = () => {
           </div>
 
           <Card className="border-border shadow-soft">
-            <CardHeader className="pb-4">
-              <CardTitle className="text-[22px] font-bold">Bienvenue</CardTitle>
-              <CardDescription>Connectez-vous à votre espace de travail</CardDescription>
+            <CardHeader className="px-10 pt-10 pb-6">
+              <CardTitle className="text-[26px] font-bold">Bienvenue</CardTitle>
+              <CardDescription className="text-[14px] mt-1">Connectez-vous à votre espace de travail</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-10 pb-10">
               <Tabs defaultValue="login">
-                <TabsList className="grid w-full grid-cols-2 mb-5">
+                <TabsList className="grid w-full grid-cols-2 mb-7 h-11">
                   <TabsTrigger value="login" className="text-[13px]">Connexion</TabsTrigger>
                   <TabsTrigger value="signup" className="text-[13px]">Créer un compte</TabsTrigger>
                 </TabsList>
